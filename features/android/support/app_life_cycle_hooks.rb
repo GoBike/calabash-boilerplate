@@ -13,7 +13,7 @@ Before do |scenario|
         install_app(ENV["APP_PATH"])
       INSTALLATION_STATE[:installed] = true
     end
-  end
+   end
     start_test_server_in_background
 end
 

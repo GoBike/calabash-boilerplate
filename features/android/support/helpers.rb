@@ -7,6 +7,9 @@ module GoBike
     def clear_text(uiquery)
       query(uiquery, {:setText=> "" })
     end
+    def check_view(text)
+      check_element_exists(text)
+    end
   end
 end
 
