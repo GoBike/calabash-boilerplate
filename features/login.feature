@@ -1,5 +1,8 @@
 @login
 Feature: Login feature
+As a Biker
+I want to Login into home
+So that I am on home
 
   Scenario: As on Login screen, App show login view
     Given I am on the Login screen
@@ -29,25 +32,22 @@ Feature: Login feature
     Given I am on the Login screen
     When I login in as "demo@gmail.com" with password "888888"
     Then I wait for progress
-    Then I should see message account exit alert
+    Then I should see message account done not exist alert
 
   Scenario: As email is valid and password is invalid, I see message "Account does not exist."
     Given I am on the Login screen
     When I login in as "demo@asia.com" with password "123456"
     Then I wait for progress
-    Then I should see message account exit alert
+    Then I should see message account done not exist alert
 
   Scenario: As email and password are invalid, I see message "Account does not exist."
     Given I am on the Login screen
     When I login in as "demo@gmail.com" with password "123456"
     Then I wait for progress
-    Then I should see message account exit alert
+    Then I should see message account done not exist alert
 
-  Scenario: As a valid user I can log into my app
+  Scenario: As a valid user I can login into home
     Given I am on the Login screen
-    When I login in as "demo@gobike.asia" with password "88888"
+    When I login in as "tai@gobike.asia" with password "taipower"
     Then I should be on the Home screen
-    Then I click on screen 10% from the left and 10% from the top
-    Then I press "Logout"
-    Then I wait for progress
-    Then I see login view
+    Then I want to logout

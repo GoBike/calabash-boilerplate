@@ -7,10 +7,6 @@ class HomeScreen < Calabash::ABase
 		"* marked:'New Tasks'"
 	end
 
-	def name
-		"* marked:'อภิศักดิ์ สันติชัยรัตน์'"
-	end
-
 	def newTask
 		"* marked:'New Task'"
 	end
@@ -21,6 +17,10 @@ class HomeScreen < Calabash::ABase
 
 	def account
 		"* marked:'Account'"
+	end
+
+	def topUp
+		"* marked:'TopUp'"
 	end
 
 	def rate
@@ -39,28 +39,12 @@ class HomeScreen < Calabash::ABase
 		"* marked:'Logout'"
 	end
 
-	def balance
-		"* marked:'Balance'"
-	end
-
-	def amount
-		"* marked:'991 ฿'"
-	end
-
 	def accountNumber
 		"* marked:'Account Number'"
 	end
 
-	def accountRef
-		"* marked:'1000001'"
-	end
-
 	def refCode
 		"* marked:'Referral Code'"
-	end
-
-	def code
-		"* marked:'086NVR'"
 	end
 
 	def personalInfo
@@ -71,16 +55,8 @@ class HomeScreen < Calabash::ABase
 		"* marked:'Email'"
 	end
 
-	def emailValue
-		"* marked:'demo@gobike.asia'"
-	end
-
 	def mobilePhone
 		"* marked:'Mobile Phone'"
-	end
-
-	def mobilePhoneValue
-		"* marked:'+66823253994'"
 	end
 
 	def plateNumber
@@ -89,6 +65,38 @@ class HomeScreen < Calabash::ABase
 
 	def changePassword
 		"* marked:'Change Password'"
+	end
+
+	def name_field
+		"* id:'biker_name'"
+	end
+
+	def credit_field
+		"* id:'credit_balance'"
+	end
+
+	def payout_field
+		"* id:'payout_balance'"
+	end
+
+	def accountNo_field
+		"* id:'account_no'"
+	end
+
+	def referralCode_field
+		"* id:'referral_code'"
+	end
+
+	def email_field
+		"* id:'email'"
+	end
+
+	def contactNumber_field
+		"* id:'contact_number'"
+	end
+
+	def plateNumber_field
+		"* id:'plate_number'"
 	end
 
 	def statusField
@@ -131,11 +139,15 @@ class HomeScreen < Calabash::ABase
 		"* id:'distance'"
 	end
 
+	def drawable_field
+		"* id:'drawer_layout'"
+	end
+
 	def sliderView
-		check_view(name)
 		check_view(newTask)
 		check_view(history)
 		check_view(account)
+		check_view(topUp)
 		check_view(rate)
 		check_view(report)
 		check_view(setting)
@@ -143,21 +155,21 @@ class HomeScreen < Calabash::ABase
 		touch(logout)
 	end
 
-	def accountDetailFirst
-		touch(account)
-		check_view(name)
-		check_view(account)
-		check_view(balance)
-		check_view(amount)
-		check_view(accountNumber)
-		check_view(accountRef)
-		check_view(refCode)
-		check_view(code)
-		check_view(personalInfo)
-		check_view(email)
-		check_view(emailValue)
-		check_view(mobilePhone)
-		check_view(mobilePhoneValue)
+	def checkNameBiker(name)
+		checkValue(name_field,name)
+	end
+
+	def checkAccount(credit,payout,accountNo,referralCode)
+		getAmountThai(credit_field,credit)
+		getAmountThai(payout_field,payout)
+		checkValue(accountNo_field,accountNo)
+		checkValue(referralCode_field,referralCode)
+	end
+
+	def checkPersonalInfo(email,mobile,plateNo)
+		checkValue(email_field,email)
+		checkValue(contactNumber_field,mobile)
+		checkValue(plateNumber_field,plateNo)
 	end
 
 	def checkStatusAtIndex(text,index)
@@ -208,8 +220,29 @@ class HomeScreen < Calabash::ABase
 		touch(account)
 	end
 
-	def touchLogout
-		touch(logout)
+	def processToLogout
+		touchScreen(10,10)
+		tapButton('Logout')
+		waitProgress
+	end
+
+	def processToTask
+		touchScreen(10,10)
+		tapButton('New Task')
+	end
+
+	def processToAccount
+		touchScreen(10,10)
+		tapButton('Account')
+		waitProgress
+	end
+
+	def collectCreditAndPayout
+		collectValueCreditAndPayout
+	end
+
+	def checkCreditAndPayoutGoRide(discount)
+		checkValueCreditAndPayoutGoRide(discount)
 	end
 
 end
