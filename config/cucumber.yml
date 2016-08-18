@@ -3,8 +3,10 @@
 <%
 # Android
 # android_home = "/usr/local/opt/android-sdk" # installed from homebrew
-android_phone = "" # device adb id
-android_emu = "emulator-5554" # emulator ADB id
+#android_phone = "FA32TPN04070" # device adb id
+#android_phone = "42003e47d03992d3" # device adb id
+#android_emu = "emulator-5554" # emulator ADB id
+android_emu = "192.168.85.101-5555" # emulator ADB id
 android_app = "../build/app.apk" # .apk file
 
 # IOS
@@ -12,7 +14,7 @@ device_ip = "http://iphone.local:37265" # Hostname of iphone
 ip = "http://192.168.10.132:37265" # IP of iphone
 iphone = "" # Device id
 ios_app = "../build/app.ipa" # .ipa file
-app_location = "../build/app.app" # .app file
+app_location = "../build/app.apk" # .app file
 %>
 ---
 # Generic Profiles
