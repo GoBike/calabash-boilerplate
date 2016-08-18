@@ -60,7 +60,7 @@ class PassengerScreen < Calabash::ABase
 	end
 
   def messageDistanceFar
-    "* marked:'Travel distance is too far for our biker. :('"
+    "* marked:'Distance is too far for biker.'"
   end
 
 	def processToPassenger(email,password)
