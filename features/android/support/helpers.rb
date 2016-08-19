@@ -85,7 +85,7 @@ module GoBike
       puts 'Collect Payout:' << $payout
     end
 
-    def checkValueCreditAndPayoutGoRide(discount)
+    def checkValueCreditAndPayoutGoRide(amountIncentive)
       puts 'Check GoRide Credit:' << $credit
       puts 'Check GoRide Payout:' << $payout
 
@@ -99,11 +99,11 @@ module GoBike
       puts 'Check GoRide Actual Payout:' << payoutArray[0]
 
       if $credit.to_f != creditArray[0].to_f
-        raise $credit << ' not equal ' << creditArray[0]
+        raise 'Credit Start ' << $credit << ' not equal ' << creditArray[0] << ' complete task'
       end
 
-      if payoutArray[0].to_f != ($payout.to_f + discount.to_f)
-        raise ($payout.to_f + discount.to_f) << ' not equal ' << payoutArray[0].to_f
+      if payoutArray[0].to_f != ($payout.to_f + amountIncentive.to_f)
+        raise 'Payout Start ' << ($payout.to_f + amountIncentive.to_f) << ' not equal ' << payoutArray[0].to_f << ' complete task'
       end
     end
 

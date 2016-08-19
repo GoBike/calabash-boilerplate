@@ -82,12 +82,20 @@ Then(/^I touch history$/) do
   page(HomeScreen).touchHistory
 end
 
+Then(/^I touch VIEW Button$/) do
+  page(LoginScreen).touchView
+end
+
+Then(/^I touch DISMISS Button$/) do
+  page(LoginScreen).touchDismiss
+end
+
 Then(/^I should be see biker name in as "([^\"]*)"$/) do |name|
   page(HomeScreen).checkNameBiker(name)
 end
 
-Then(/^I should be see account detail in as Credit balance "([^\"]*)" ,Payout balance "([^\"]*)" ,Account Number "([^\"]*)" and Referral Code "([^\"]*)"$/) do |credit,payout,accountNo,referralNo|
-  page(HomeScreen).checkAccount(credit,payout,accountNo,referralNo)
+Then(/^I should be see account detail in as Account Number "([^\"]*)" and Referral Code "([^\"]*)"$/) do |accountNo,referralNo|
+  page(HomeScreen).checkAccount(accountNo,referralNo)
 end
 
 Then(/^I should be see Personal INFO in as Email "([^\"]*)" ,Mobile Phone "([^\"]*)" and Plate Number "([^\"]*)"$/) do |email,mobile,plate|

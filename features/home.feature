@@ -17,7 +17,7 @@ So that I can use my service
     Then I should be on the Home screen
     Then I want to my Account
     Then I should be see biker name in as "Wichian Chotwattana"
-    Then I should be see account detail in as Credit balance "685.20" ,Payout balance "353.80" ,Account Number "1035991" and Referral Code "0G49RH"
+    Then I should be see account detail in as Account Number "1035991" and Referral Code "0G49RH"
     Then I scroll down
     Then I should be see Personal INFO in as Email "tai@gobike.asia" ,Mobile Phone "+66813504077" and Plate Number "853"
     Then I want to logout

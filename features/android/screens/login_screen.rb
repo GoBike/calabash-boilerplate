@@ -75,6 +75,14 @@ class LoginScreen < Calabash::ABase
 		"* marked:'Account does not exist.'"
 	end
 
+	def viewText
+		"* marked:'VIEW'"
+	end
+
+	def dismissText
+		"* marked:'DISMISS'"
+	end
+
 	def login(email, password)
 		clear_text(email_field)
 		enter_text(email_field, email)
@@ -98,6 +106,14 @@ class LoginScreen < Calabash::ABase
 
 	def touchLogin
 		touch(login_button)
+	end
+
+	def touchView
+		touch(viewText)
+	end
+
+	def touchDismiss
+		touch(dismissText)
 	end
 
 	def showMessageEmailBlank

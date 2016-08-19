@@ -159,9 +159,7 @@ class HomeScreen < Calabash::ABase
 		checkValue(name_field,name)
 	end
 
-	def checkAccount(credit,payout,accountNo,referralCode)
-		getAmountThai(credit_field,credit)
-		getAmountThai(payout_field,payout)
+	def checkAccount(accountNo,referralCode)
 		checkValue(accountNo_field,accountNo)
 		checkValue(referralCode_field,referralCode)
 	end
