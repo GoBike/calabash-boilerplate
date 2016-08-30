@@ -14,8 +14,8 @@ Given(/^I am on the Passenger screen by login in as email "(.*?)" with password 
   page(PassengerScreen).processToPassenger(email,password)
 end
 
-Then(/^I login in as email "(.*?)" with password "(.*?)"$/) do |email, password|
-  page(LoginScreen).login(email, password)
+Given(/^I am on the Messenger screen by Login in as email "(.*?)" with password "(.*?)"$/) do |email,password|
+  page(MessengerScreen).processToMessenger(email,password)
 end
 
 When(/^I sign up in as "(.*?)"$/) do |email|
@@ -42,6 +42,26 @@ When(/^I touch Pick Up$/) do
   page(PassengerScreen).touchPickUp
 end
 
+When(/^I touch select Pick up address$/) do
+  page(MessengerScreen).touchPickUp
+end
+
+When(/^I touch select Drop off address$/) do
+  page(MessengerScreen).touchDropOff
+end
+
+When(/^I touch NEXT Button$/) do
+  page(MessengerScreen).touchNext
+end
+
+When(/^I touch Sender Name$/) do
+  page(MessengerScreen).touchSenderName
+end
+
+When(/^I touch Recipient name$/) do
+  page(MessengerScreen).touchRecipientName
+end
+
 When(/^Customer let rating "([^\"]*)"$/) do |rating|
   page(RatingScreen).setRatingFromCustomer(rating)
 end
@@ -62,6 +82,14 @@ When(/^I enter booking by note in as "(.*?)" ,Tip in as (\d+) Baht and promo cod
   page(BookingScreen).enterBooking(note,tip,promo)
 end
 
+When(/^I enter Sender name in as "(.*?)"$/) do |name|
+  page(MessengerScreen).enterSenderName(name)
+end
+
+Then(/^I login in as email "(.*?)" with password "(.*?)"$/) do |email, password|
+  page(LoginScreen).login(email, password)
+end
+
 Then(/^I login in as "(.*?)"$/) do |email|
   page(LoginScreen).loginByEmail(email)
 end
@@ -76,6 +104,14 @@ end
 
 Then(/^I search location in as "(.*?)" with selected "(.*?)"$/) do |inSearch,chooseLocation|
   page(PassengerScreen).selectedLocation(inSearch,chooseLocation)
+end
+
+Then(/^I enter sender info in as name "(.*?)" and mobile phone "(.*?)"$/) do |name,phone|
+  page(MessengerScreen).enterSender(name,phone)
+end
+
+Then(/^I enter recipient info as name "(.*?)" and mobile phone "(.*?)"$/) do |name,phone|
+  page(MessengerScreen).enterRecipient(name,phone)
 end
 
 Then(/^I should be see my service$/) do
@@ -130,6 +166,10 @@ Then(/^I should be see the same point dialog alert$/) do
   page(PassengerScreen).checkTheSamePoint
 end
 
+Then(/^I should be see the same point dialog alert in Messenger screen$/) do
+  page(MessengerScreen).checkTheSamePlaceMessage
+end
+
 Then(/^I should be see message Tip alert$/) do
   page(BookingScreen).checkMessageTip
 end
@@ -140,6 +180,18 @@ end
 
 Then(/^I should be see message distance too far alert$/) do
   page(PassengerScreen).checkMessageDistanceFar
+end
+
+Then(/^I should be see message Invalid request alert$/) do
+  page(MessengerScreen).checkInvaileMessage
+end
+
+Then(/^I should be see message This field is mandatory alert$/) do
+  page(MessengerScreen).checkMandatoryMessage
+end
+
+Then(/^I should be see message Incorrect phone format alert$/) do
+  page(MessengerScreen).checkIncorrectPhoneMessage
 end
 
 Then(/^I touch LOGIN button$/) do
@@ -212,4 +264,16 @@ end
 
 Then(/^I touch OK Feedback$/) do
   page(RatingScreen).touchOK
+end
+
+Then(/^I tap Round Trip$/) do
+  page(MessengerScreen).tapRoundTrip
+end
+
+Then(/^I touch Sender phone number$/) do
+  page(MessengerScreen).touchSenderPhone
+end
+
+Then(/^I touch Recipient phone number$/) do
+  page(MessengerScreen).touchRecipientPhone
 end

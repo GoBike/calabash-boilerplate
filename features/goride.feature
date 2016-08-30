@@ -12,7 +12,7 @@ So that I can travel from start and end point
     Then I search location in as "Thailand Cultural MRT" with selected "Thailand Cultural MRT Station"
     When I touch Drop Off
     Then I search location in as "central rama" with selected "Central rama 9"
-    Then I should see text containing "(30"
+    Then I should see text containing "(25"
     When I enter booking by note in as "Test Go Ride 2" ,Tip in as 0 Baht and promo code in as ""
     When I touch BOOK BIKER Button
     Then I wait for progress
@@ -24,7 +24,7 @@ So that I can travel from start and end point
     Then I should be see Biker number is "853"
     Then I wait up to 60 seconds to see "On trip"
     Then I wait up to 60 seconds to see "Thank you!"
-    Then I should be see total fare is 30 thb
+    Then I should be see total fare is 25 thb
     Then I should be see Biker name is "Wichian Chotwattana" in Rating Screen
     Then I should be see Biker number is "853" in Rating Screen
     When Customer let rating "4.0"
@@ -41,9 +41,9 @@ So that I can travel from start and end point
     Then I search location in as "Thailand Cultural MRT" with selected "Thailand Cultural MRT Station"
     When I touch Drop Off
     Then I search location in as "central em" with selected "Central Embassy"
-    Then I should see text containing "(50"
+    Then I should see text containing "(40"
     When I enter booking by note in as "Test Go Ride 3" ,Tip in as 25 Baht and promo code in as ""
-    Then I should see text containing "(75"
+    Then I should see text containing "(65"
     When I touch BOOK BIKER Button
     Then I wait for progress
     Then I wait for 3 seconds
@@ -54,7 +54,7 @@ So that I can travel from start and end point
     Then I should be see Biker number is "853"
     Then I wait up to 60 seconds to see "On trip"
     Then I wait up to 60 seconds to see "Thank you!"
-    Then I should be see total fare is 75 thb
+    Then I should be see total fare is 65 thb
     Then I should be see Biker name is "Wichian Chotwattana" in Rating Screen
     Then I should be see Biker number is "853" in Rating Screen
     When Customer let rating "4.0"

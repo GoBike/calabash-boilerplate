@@ -44,7 +44,7 @@ So that I unsuccessful booking
     Then I go back
     Then I want to logout
 
-  Scenario: As a enter drop off more than 30 km., I see message long distance alert
+  Scenario: As a enter drop off more than 50 km., I see message long distance alert
     Given I am on the Passenger screen by login in as email "customera76@gmail.com" with password "taipower"
     Then I wait for progress
     Then I wait for 5 seconds
