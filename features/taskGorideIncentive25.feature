@@ -12,11 +12,12 @@ So that I can send customer from start to end point and get incentive 25 Baht
     Then I want to my Task
 		Then I wait up to 120 seconds to see "You have a new task request"
 		Then I touch VIEW Button
-		Then I wait up to 120 seconds to see "Go Ride"
-    Then I press list item number 1
-		Then I wait for progress
-		Then I wait for 3 seconds
-		Then I should be see TRIP FARE in as 30 Baht,DISCOUNT in as 0 Baht,TIP in as 0 Baht,SERVICE in as "Go Ride" ,TYPE in as "-" and PLEASE COLLECT in as 30 Baht
+#		Then I wait up to 120 seconds to see "Go Rid"
+#    Then I press list item number 1
+#		Then I wait for progress
+#		Then I wait for 3 seconds
+		Then I wait up to 120 seconds to see "PICK UP"
+		Then I should be see TRIP FARE in as 25 Baht,DISCOUNT in as 0 Baht,TIP in as 0 Baht,SERVICE in as "Go Ride" ,TYPE in as "-" and PLEASE COLLECT in as 25 Baht
 		Then I scroll down
 		Then I should be see Note To Biker in as "Test Go Ride 2"
 		When I touch REQUEST TASK
@@ -30,7 +31,7 @@ So that I can send customer from start to end point and get incentive 25 Baht
 		When I touch DROPPED OFF button
 		Then I wait for progress
 		Then I wait for 3 seconds
-		Then I should be see FARE "30.0 thb"
+		Then I should be see FARE "25.0 thb"
 		When Biker let Rating "4.0"
 		Then I wait for 3 seconds
     Then I want to my Account
@@ -45,11 +46,12 @@ So that I can send customer from start to end point and get incentive 25 Baht
     Then I want to my Task
 		Then I wait up to 120 seconds to see "You have a new task request"
 		Then I touch VIEW Button
-		Then I wait up to 120 seconds to see "Go Ride"
-	  Then I press list item number 1
-		Then I wait for progress
-		Then I wait for 3 seconds
-		Then I should be see TRIP FARE in as 50 Baht,DISCOUNT in as 0 Baht,TIP in as 25 Baht,SERVICE in as "Go Ride" ,TYPE in as "-" and PLEASE COLLECT in as 75 Baht
+#		Then I wait up to 120 seconds to see "Go Ride"
+#	  Then I press list item number 1
+#		Then I wait for progress
+#		Then I wait for 3 seconds
+		Then I wait up to 120 seconds to see "PICK UP"
+		Then I should be see TRIP FARE in as 40 Baht,DISCOUNT in as 0 Baht,TIP in as 25 Baht,SERVICE in as "Go Ride" ,TYPE in as "-" and PLEASE COLLECT in as 65 Baht
 		Then I scroll down
 		Then I should be see Note To Biker in as "Test Go Ride 3"
 		When I touch REQUEST TASK
@@ -63,7 +65,7 @@ So that I can send customer from start to end point and get incentive 25 Baht
 		When I touch DROPPED OFF button
 		Then I wait for progress
 		Then I wait for 3 seconds
-		Then I should be see FARE "75.0 thb"
+		Then I should be see FARE "65.0 thb"
 		When Biker let Rating "4.0"
 		Then I wait for 3 seconds
     Then I want to my Account
