@@ -61,6 +61,13 @@ module GoBike
       end
     end
 
+    def doubleBooking(round)
+      for counter in 0..round.to_i
+        wait_for_text('FIND AGAIN', timeout: 250)
+        tap_when_element_exists("* marked:'#{FIND AGAIN}'")
+      end
+    end
+
   end
 end
 

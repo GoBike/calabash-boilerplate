@@ -30,6 +30,10 @@ When(/^I touch LOGIN Tab$/) do
   page(LoginScreen).tapLogin
 end
 
+When(/^I open Slide Bar Menu$/) do
+  page(HomeScreen).openSlideMenu
+end
+
 When(/^I touch Go Ride button$/) do
   page(PassengerScreen).touchGoRide
 end
@@ -276,4 +280,8 @@ end
 
 Then(/^I touch Recipient phone number$/) do
   page(MessengerScreen).touchRecipientPhone
+end
+
+Then(/^I double booking (\d+) round$/) do |round|
+  page(FindingBikerScreen).doubleBook(round)
 end

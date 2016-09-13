@@ -54,15 +54,17 @@ So that I can login to home screen
     Then I scroll down
     Then I touch LOGIN button
     Then I wait for progress
+    Then I wait for 2 seconds
     Then I should be see message account does not exist
 
-  Scenario: As a enter invalid password, I see
+  Scenario: As a enter invalid password, I see message incorrect password.
     Given I am on the Login screen
     When I touch LOGIN Tab
     Then I login in as email "customera76@gmail.com" with password "123456"
     Then I scroll down
     Then I touch LOGIN button
     Then I wait for progress
+    Then I wait for 2 seconds
     Then I should be see message incorrect password alert
 
   Scenario: As a valid user I can Login into my app

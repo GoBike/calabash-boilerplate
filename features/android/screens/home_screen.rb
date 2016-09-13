@@ -108,6 +108,8 @@ class HomeScreen < Calabash::ABase
 		check_view(report)
 		check_view(settings)
 		check_view(logout)
+		tapButton('Logout')
+		waitProgress
 	end
 
 	def checkAcoount(name,email,mobile,referralCode)
@@ -115,6 +117,10 @@ class HomeScreen < Calabash::ABase
 		checkValue(email_field,email)
 		checkValue(contact_field,mobile)
 		checkValue(referralCode_field,referralCode)
+	end
+
+	def openSlideMenu
+		touchScreen(10,10)
 	end
 
 	def processToLogout

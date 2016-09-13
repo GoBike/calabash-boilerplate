@@ -13,9 +13,8 @@ So that it action on my service
   Scenario: As a on home screen, I see valid slider view
     Given I am on the home screen by Login in as email "customera76@gmail.com" with password "taipower"
     Then I should be on the Home screen
-    Then I click on screen 10% from the left and 10% from the top
+    When I open Slide Bar Menu
     Then I should be see slider view
-    Then I press "Logout"
 
   Scenario: As a on home screen, I see my detail account info
     Given I am on the home screen by Login in as email "customera76@gmail.com" with password "taipower"

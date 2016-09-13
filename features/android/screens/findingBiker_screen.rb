@@ -11,4 +11,8 @@ class FindingBikerScreen < Calabash::ABase
     check_view(findingBiker)
   end
 
+  def doubleBook(round)
+  	doubleBooking(round)
+  end
+
 end
