@@ -54,8 +54,9 @@ So that I can login to home screen
     Then I scroll down
     Then I touch LOGIN button
     Then I wait for progress
-    Then I wait for 2 seconds
-    Then I should be see message account does not exist
+#    Then I wait for 2 seconds
+#    Then I should be see message account does not exist
+    Then I wait up to 30 seconds to see "Account does not exist."
 
   Scenario: As a enter invalid password, I see message incorrect password.
     Given I am on the Login screen
@@ -64,8 +65,9 @@ So that I can login to home screen
     Then I scroll down
     Then I touch LOGIN button
     Then I wait for progress
-    Then I wait for 2 seconds
-    Then I should be see message incorrect password alert
+#    Then I wait for 2 seconds
+#    Then I should be see message incorrect password alert
+    Then I wait up to 30 seconds to see "Incorrect current password."
 
   Scenario: As a valid user I can Login into my app
     Given I am on the Login screen
