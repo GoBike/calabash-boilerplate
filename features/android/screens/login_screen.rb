@@ -75,6 +75,10 @@ class LoginScreen < Calabash::ABase
 		"* marked:'Account does not exist.'"
 	end
 
+	def textIncorrectPassword
+		"* marked:'Incorrect current password.'"
+	end
+
 	def viewText
 		"* marked:'VIEW'"
 	end
@@ -130,6 +134,10 @@ class LoginScreen < Calabash::ABase
 
 	def showMessageAccountNotExit
 		check_view(textAccountNotExit)
+	end
+
+	def showMessageIncorrectPassword
+		check_view(textIncorrectPassword)
 	end
 
 	def passwordBlank(email)

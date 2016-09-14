@@ -11,8 +11,8 @@ android_app = "../build/app.apk" # .apk file
 
 # IOS
 device_ip = "http://iphone.local:37265" # Hostname of iphone
-ip = "http://192.168.10.132:37265" # IP of iphone
-iphone = "" # Device id
+ip = "http://192.168.43.247:37265" # IP of iphone
+iphone = "9da7a5684361dcb3dd68d9db4bf48189b62b0014" # Device id
 ios_app = "../build/app.ipa" # .ipa file
 app_location = "../build/app.app" # .app file
 %>

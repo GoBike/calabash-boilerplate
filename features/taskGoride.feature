@@ -7,7 +7,7 @@ So that I can send customer from start to end point
 	Scenario: As a choose task, I can send customer from start to end point
 		Given I am on the Home screen by login in as "tai@gobike.asia" with password "taipower"
 		Then I wait up to 120 seconds to see "Go Ride"
-    Then I press list item number 1
+    	Then I press list item number 1
 		Then I wait for progress
 		Then I wait for 3 seconds
 		Then I should be see TRIP FARE in as 30 Baht,DISCOUNT in as 0 Baht,TIP in as 0 Baht,SERVICE in as "Go Ride" ,TYPE in as "-" and PLEASE COLLECT in as 30 Baht
@@ -32,7 +32,7 @@ So that I can send customer from start to end point
 	Scenario: As a choose task have tip and no promo, I can send customer from start to end point
 		Given I am on the Home screen by login in as "tai@gobike.asia" with password "taipower"
 		Then I wait up to 120 seconds to see "Go Ride"
-	  Then I press list item number 1
+	  	Then I press list item number 1
 		Then I wait for progress
 		Then I wait for 3 seconds
 		Then I should be see TRIP FARE in as 50 Baht,DISCOUNT in as 0 Baht,TIP in as 25 Baht,SERVICE in as "Go Ride" ,TYPE in as "-" and PLEASE COLLECT in as 75 Baht

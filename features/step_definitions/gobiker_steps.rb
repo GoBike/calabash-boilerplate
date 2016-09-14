@@ -22,6 +22,10 @@ When(/^I login in email as "(.*?)"$/) do |email|
   page(LoginScreen).passwordBlank(email)
 end
 
+When(/^I open Slide Bar Menu$/) do
+  page(HomeScreen).openSlideMenu
+end
+
 When(/^I touch REQUEST TASK$/) do
   page(TaskDetailScreen).touchRequestTask
 end
@@ -70,6 +74,10 @@ Then(/^I should see message account done not exist alert$/) do
   page(LoginScreen).showMessageAccountNotExit
 end
 
+Then(/^I should see message Incorrect current password alert$/) do
+  page(LoginScreen).showMessageIncorrectPassword
+end
+
 Then(/^I should be on the Home screen$/) do
   home_screen = page(HomeScreen).await
 end
@@ -80,6 +88,10 @@ end
 
 Then(/^I touch history$/) do
   page(HomeScreen).touchHistory
+end
+
+Then(/^I touch Logout$/) do
+  page(HomeScreen).touchLogout
 end
 
 Then(/^I touch VIEW Button$/) do

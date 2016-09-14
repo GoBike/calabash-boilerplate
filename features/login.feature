@@ -30,21 +30,27 @@ So that I am on home
 
   Scenario: As email is invalid and password is valid, I see message "Account does not exist."
     Given I am on the Login screen
-    When I login in as "demo@gmail.com" with password "888888"
+    When I login in as "demo@gmail.com" with password "88888"
     Then I wait for progress
-    Then I should see message account done not exist alert
+#    Then I wait for 2 seconds
+#    Then I should see message account done not exist alert
+    Then I wait up to 30 seconds to see "Account does not exist."
 
-  Scenario: As email is valid and password is invalid, I see message "Account does not exist."
+  Scenario: As email is valid and password is invalid, I see message "Incorrect current password."
     Given I am on the Login screen
-    When I login in as "demo@asia.com" with password "123456"
+    When I login in as "demo@gobike.asia" with password "123456"
     Then I wait for progress
-    Then I should see message account done not exist alert
+#    Then I wait for 2 seconds
+#    Then I should see message Incorrect current password alert
+    Then I wait up to 30 seconds to see "Incorrect current password."
 
   Scenario: As email and password are invalid, I see message "Account does not exist."
     Given I am on the Login screen
     When I login in as "demo@gmail.com" with password "123456"
     Then I wait for progress
-    Then I should see message account done not exist alert
+#    Then I wait for 2 seconds
+#    Then I should see message account done not exist alert
+    Then I wait up to 30 seconds to see "Account does not exist."
 
   Scenario: As a valid user I can login into home
     Given I am on the Login screen

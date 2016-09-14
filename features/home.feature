@@ -8,7 +8,7 @@ So that I can use my service
     Given I am on the Login screen
     When I login in as "tai@gobike.asia" with password "taipower"
     Then I should be on the Home screen
-    Then I click on screen 10% from the left and 10% from the top
+    When I open Slide Bar Menu
     Then I see slider view
 
   Scenario: As on Home screen, App show account detail

@@ -152,7 +152,8 @@ class HomeScreen < Calabash::ABase
 		check_view(report)
 		check_view(setting)
 		check_view(logout)
-		touch(logout)
+		tapButton('Logout')
+		waitProgress
 	end
 
 	def checkNameBiker(name)
@@ -216,6 +217,14 @@ class HomeScreen < Calabash::ABase
 
 	def touchAccount
 		touch(account)
+	end
+
+	def openSlideMenu
+		touchScreen(10,10)
+	end
+
+	def touchLogout
+		tapButton('Logout')
 	end
 
 	def processToLogout
