@@ -71,14 +71,6 @@ class LoginScreen < Calabash::ABase
 		"* marked:'Password cannot be blank'"
 	end
 
-	def textAccountNotExit
-		"* marked:'Account does not exist.'"
-	end
-
-	def textIncorrectPassword
-		"* marked:'Incorrect current password.'"
-	end
-
 	def viewText
 		"* marked:'VIEW'"
 	end
@@ -95,17 +87,28 @@ class LoginScreen < Calabash::ABase
 		touch(login_button)
 	end
 
-	def loginView
-		check_view(textEmail)
-		check_view(textPassword)
-		check_view(trait)
-		check_view(textForgetPassword)
-		check_view(textRegistered)
-		check_view(textCallUS)
-		check_view(textOR)
-		check_view(textSUMMIT)
-		check_view(textThankYou)
-		check_view(textConsumer)
+	def loginView(app)
+		if app = 'Biker'
+			check_view(textEmail)
+			check_view(textPassword)
+			check_view(trait)
+			check_view(textForgetPassword)
+			check_view(textRegistered)
+			check_view(textCallUS)
+			check_view(textOR)
+			check_view(textSUMMIT)
+			check_view(textThankYou)
+			check_view(textConsumer)
+		else
+			check_view(textEmail)
+			check_view(textPassword)
+			check_view(trait)
+			check_view(textForgetPassword)
+		end
+	end
+
+	def tapLogin
+		touch(trait)
 	end
 
 	def touchLogin
@@ -130,14 +133,6 @@ class LoginScreen < Calabash::ABase
 
 	def showMessagePasswordBlank
 		check_view(textPasswordBlank)
-	end
-
-	def showMessageAccountNotExit
-		check_view(textAccountNotExit)
-	end
-
-	def showMessageIncorrectPassword
-		check_view(textIncorrectPassword)
 	end
 
 	def passwordBlank(email)

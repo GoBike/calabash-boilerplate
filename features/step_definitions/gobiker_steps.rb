@@ -1,3 +1,7 @@
+Given(/^I am on the Sign up screen$/) do
+    signup_screen = page(SignupScreen).await
+end
+
 Given(/^I am on the Login screen$/) do
   login_screen = page(LoginScreen).await
 end
@@ -10,8 +14,16 @@ Given(/^I am on the Task Detail Screen$/) do
   taskDetail_screen = page(TaskDetailScreen).await
 end
 
+When(/^I sign up in as "(.*?)"$/) do |email|
+  page(SignupScreen).signupByEmail(email)
+end
+
 When(/^I login in as "(.*?)" with password "(.*?)"$/) do |email, password|
   page(LoginScreen).login(email, password)
+end
+
+When(/^I touch NEXT button$/) do
+  page(SignupScreen).touchNext
 end
 
 When(/^I touch LOGIN button$/) do
@@ -42,8 +54,12 @@ When(/^Biker let Rating "([^\"]*)"$/) do |rating|
   page(RatingScreen).setRatingFromBiker(rating)
 end
 
-Then(/^I see login view$/) do
-  page(LoginScreen).loginView
+Then(/^I should be on the Sign Up screen$/) do
+  page(SignupScreen).checkSignupView
+end
+
+Then(/^I should be on the Login screen of "([^\"]*)" app$/) do |app|
+  page(LoginScreen).loginView(app)
 end
 
 Then(/^I want to logout$/) do
@@ -58,11 +74,19 @@ Then(/^I want to my Task$/) do
   page(HomeScreen).processToTask
 end
 
-Then(/^I should see message email blank alert$/) do
+Then(/^I should see message email format alert in Sign Up screen$/) do
+  page(SignupScreen).showMessageEmailFormat
+end
+
+Then(/^I should see message email format alert in Sign Up screen$/) do
+  page(SignupScreen).showMessageEmailFormat
+end
+
+Then(/^I should see message email blank alert in Login screen$/) do
   page(LoginScreen).showMessageEmailBlank
 end
 
-Then(/^I should see message email format alert$/) do
+Then(/^I should see message email format alert in Login screen$/) do
   page(LoginScreen).showMessageEmailFormat
 end
 
@@ -76,6 +100,10 @@ end
 
 Then(/^I should see message Incorrect current password alert$/) do
   page(LoginScreen).showMessageIncorrectPassword
+end
+
+Then(/^I login in as email "(.*?)" with password "(.*?)"$/) do |email, password|
+  page(LoginScreen).login(email, password)
 end
 
 Then(/^I should be on the Home screen$/) do
