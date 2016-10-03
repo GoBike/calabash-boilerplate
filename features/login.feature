@@ -54,6 +54,6 @@ So that I am on home
 
   Scenario: As a valid user I can login into home
     Given I am on the Login screen
-    When I login in as "tai@gobike.asia" with password "taipower"
+    When I login in as "tai@gobike.asia" with password "taipower18"
     Then I should be on the Home screen
     Then I want to logout
