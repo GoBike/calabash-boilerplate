@@ -5,7 +5,7 @@ I want to used Go Messenger Service
 So that I unsuccessful in used messenger service
 
   Scenario: As a not enter drop off data of One Way and Round Trip, I see invalid request alert
-    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
+    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower18"
     Then I wait for progress
     When I touch select Pick up address
     Then I search location in as "Thailand Cultural MRT" with selected "Thailand Cultural MRT Station"
@@ -28,7 +28,7 @@ So that I unsuccessful in used messenger service
     Then I want to logout
 
   Scenario: As a not enter Sender info, I see mandatory alert
-    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
+    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower18"
     Then I wait for progress
     When I touch select Pick up address
     Then I search location in as "Thailand Cultural MRT" with selected "Thailand Cultural MRT Station"
@@ -46,7 +46,7 @@ So that I unsuccessful in used messenger service
     Then I want to logout
 
   Scenario: As a enter incorrect phone format, I see incorrect phone format alert
-    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
+    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower18"
     Then I wait for progress
     When I touch select Pick up address
     Then I search location in as "Thailand Cultural MRT" with selected "Thailand Cultural MRT Station"
@@ -79,7 +79,7 @@ So that I unsuccessful in used messenger service
     Then I want to logout
 
   Scenario: As a enter Pick Up and Drop Off are the same, I see the same place alert
-    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
+    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower18"
     Then I wait for progress
     When I touch select Pick up address
     Then I search location in as "Thailand Cultural MRT" with selected "Thailand Cultural MRT Station"
@@ -93,7 +93,7 @@ So that I unsuccessful in used messenger service
     Then I want to logout
 
   Scenario: As a enter too far distance, I see distance the too far alert
-    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
+    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower18"
     Then I wait for progress
     When I touch select Pick up address
     Then I search location in as "Thailand Cultural MRT" with selected "Thailand Cultural MRT Station"

@@ -72,7 +72,7 @@ So that I can login to home screen
   Scenario: As a valid user I can Login into my app
     Given I am on the Login screen
     When I touch LOGIN Tab
-    Then I login in as email "customera76@gmail.com" with password "taipower"
+    Then I login in as email "customera76@gmail.com" with password "taipower18"
     Then I scroll down
     Then I touch LOGIN button
     Then I wait for progress

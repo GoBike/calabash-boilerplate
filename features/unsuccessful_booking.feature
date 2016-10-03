@@ -5,7 +5,7 @@ I want to see message Booking alert
 So that I unsuccessful booking
 
   Scenario: As a enter empty location, I see message alert
-    Given I am on the Passenger screen by login in as email "customera76@gmail.com" with password "taipower"
+    Given I am on the Passenger screen by login in as email "customera76@gmail.com" with password "taipower18"
     Then I wait for progress
     Then I touch CHECK FARE button
     Then I should be see message choose location alert
@@ -13,7 +13,7 @@ So that I unsuccessful booking
     Then I want to logout
 
   Scenario: As a enter the same start and end point, I see message the same location alert
-    Given I am on the Passenger screen by login in as email "customera76@gmail.com" with password "taipower"
+    Given I am on the Passenger screen by login in as email "customera76@gmail.com" with password "taipower18"
     Then I wait for progress
     Then I wait for 5 seconds
     When I touch Pick Up
@@ -26,7 +26,7 @@ So that I unsuccessful booking
     Then I want to logout
 
   Scenario: As a enter Tip more than 100 Bath, I see message Tip alert.
-    Given I am on the Passenger screen by login in as email "customera76@gmail.com" with password "taipower"
+    Given I am on the Passenger screen by login in as email "customera76@gmail.com" with password "taipower18"
     Then I wait for progress
     Then I wait for 5 seconds
     When I touch Pick Up
@@ -45,7 +45,7 @@ So that I unsuccessful booking
     Then I want to logout
 
   Scenario: As a enter drop off more than 50 km., I see message long distance alert
-    Given I am on the Passenger screen by login in as email "customera76@gmail.com" with password "taipower"
+    Given I am on the Passenger screen by login in as email "customera76@gmail.com" with password "taipower18"
     Then I wait for progress
     Then I wait for 5 seconds
     When I touch Pick Up
@@ -58,7 +58,7 @@ So that I unsuccessful booking
     Then I want to logout
 
   Scenario: As a enter invalid promo code, I see message invalid promo code alert
-    Given I am on the Passenger screen by login in as email "customera76@gmail.com" with password "taipower"
+    Given I am on the Passenger screen by login in as email "customera76@gmail.com" with password "taipower18"
     Then I wait for progress
     Then I wait for 5 seconds
     When I touch Pick Up
