@@ -7,6 +7,30 @@ class HomeScreen < Calabash::ABase
 		"* marked:'New Tasks'"
 	end
 
+	def goRide
+		"* marked:'Go Ride'"
+	end
+
+	def rideSafely
+		"* marked:'Ride Safely'"
+	end
+
+	def goMessenger
+		"* marked:'Go Messenger'"
+	end
+
+	def delivery
+		"* marked:'Delivery Fast & Safe'"
+	end
+
+	def goBuy
+		"* marked:'Go Buy'"
+	end
+
+	def quickBuy
+		"* marked:'Quick Buy & Reliable'"
+	end
+
 	def newTask
 		"* marked:'New Task'"
 	end
@@ -143,6 +167,31 @@ class HomeScreen < Calabash::ABase
 		"* id:'drawer_layout'"
 	end
 
+	def namecustomer_field
+		"* id:'tvw_consumer_name'"
+	end
+
+	def emailcustomer_field
+		"* id:'tvw_consumer_email'"
+	end
+
+	def contactcustomer_field
+		"* id:'tvw_consumer_contact'"
+	end
+
+	def referralCodecustomer_field
+		"* id:'tvw_consumer_referral_code'"
+	end
+
+	def checkShowService
+		check_view(goRide)
+		check_view(rideSafely)
+		check_view(goBuy)
+		check_view(quickBuy)
+		check_view(goMessenger)
+		check_view(delivery)
+	end
+
 	def sliderView
 		check_view(newTask)
 		check_view(history)
@@ -160,7 +209,7 @@ class HomeScreen < Calabash::ABase
 		checkValue(name_field,name)
 	end
 
-	def checkAccount(accountNo,referralCode)
+	def checkAccountBiker(accountNo,referralCode)
 		checkValue(accountNo_field,accountNo)
 		checkValue(referralCode_field,referralCode)
 	end
@@ -169,6 +218,13 @@ class HomeScreen < Calabash::ABase
 		checkValue(email_field,email)
 		checkValue(contactNumber_field,mobile)
 		checkValue(plateNumber_field,plateNo)
+	end
+
+	def checkAcoountCustomer(name,email,mobile,referralCode)
+		checkValue(namecustomer_field,name)
+		checkValue(emailcustomer_field,email)
+		checkValue(contactcustomer_field,mobile)
+		checkValue(referralCodecustomer_field,referralCode)
 	end
 
 	def checkStatusAtIndex(text,index)
@@ -227,10 +283,17 @@ class HomeScreen < Calabash::ABase
 		tapButton('Logout')
 	end
 
-	def processToLogout
-		touchScreen(10,10)
-		tapButton('Logout')
-		waitProgress
+	def processToLogout(app)
+		if app == 'Biker'
+			touchScreen(10,10)
+			tapButton('Logout')
+			waitProgress
+		else
+			touchScreen(10,10)
+			tapButton('Settings')
+			tapButton('Logout')
+			waitProgress
+		end
 	end
 
 	def processToTask
@@ -238,10 +301,17 @@ class HomeScreen < Calabash::ABase
 		tapButton('New Task')
 	end
 
-	def processToAccount
-		touchScreen(10,10)
-		tapButton('Account')
-		waitProgress
+	def processToAccount(app)
+		if app == 'Biker'
+			touchScreen(10,10)
+			tapButton('Account')
+			waitProgress	
+		else
+			touchScreen(10,10)
+			tapButton('Settings')
+			tapButton('Account')
+			waitProgress
+		end
 	end
 
 	def collectCreditAndPayout

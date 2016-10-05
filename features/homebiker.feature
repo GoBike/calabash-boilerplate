@@ -6,21 +6,21 @@ So that I can use my service
 
   Scenario: As on Home screen, App show drawable view
     Given I am on the Login screen
-    When I login in as "tai@gobike.asia" with password "taipower18"
+    When I login in as "tai@gobike.asia" with password "taipower" in Login screen
     Then I should be on the Home screen
     When I open Slide Bar Menu
     Then I see slider view
 
   Scenario: As on Home screen, App show account detail
     Given I am on the Login screen
-    When I login in as "tai@gobike.asia" with password "taipower18"
+    When I login in as "tai@gobike.asia" with password "taipower" in Login screen
     Then I should be on the Home screen
-    Then I want to my Account
+    Then I want to my Account in "Biker" app
     Then I should be see biker name in as "Wichian Chotwattana"
     Then I should be see account detail in as Account Number "1035991" and Referral Code "0G49RH"
     Then I scroll down
     Then I should be see Personal INFO in as Email "tai@gobike.asia" ,Mobile Phone "+66813504077" and Plate Number "853"
-    Then I want to logout
+    Then I want to logout in "Biker" app
 
 #  Scenario: As on Home screen, App show history detail
 #    Given I am on the Login screen

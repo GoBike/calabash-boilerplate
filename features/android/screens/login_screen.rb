@@ -7,16 +7,20 @@ class LoginScreen < Calabash::ABase
 		trait
 	end
 
-	def touchPassword
-		textPassword
+	def touchTextPassword
+		touch(textPassword)
 	end
 
 	def email_field
-		"edittext id:'et_email'"
+		"* id:'et_email'"
 	end
 
 	def password_field
-		"edittext id:'et_password'"
+		"* id:'et_password'"
+	end
+
+	def button_field
+		"* id:'btn_login'"
 	end
 
 	def trait
@@ -67,16 +71,16 @@ class LoginScreen < Calabash::ABase
 		"* marked:'Invalid Email Format'"
 	end
 
+	def textEmailIncorrect
+		"* marked:'Incorrect email format.'"
+	end
+
 	def textPasswordBlank
 		"* marked:'Password cannot be blank'"
 	end
 
-	def textAccountNotExit
-		"* marked:'Account does not exist.'"
-	end
-
-	def textIncorrectPassword
-		"* marked:'Incorrect current password.'"
+	def keyPasswordBlank
+		"* marked:'Please key in your password.'"
 	end
 
 	def viewText
@@ -87,6 +91,14 @@ class LoginScreen < Calabash::ABase
 		"* marked:'DISMISS'"
 	end
 
+	def yourEmail
+		"* marked:'Enter Your Email'"
+	end
+
+	def yourPassword
+		"* marked:'Enter Your Password'"
+	end
+
 	def login(email, password)
 		clear_text(email_field)
 		enter_text(email_field, email)
@@ -95,21 +107,38 @@ class LoginScreen < Calabash::ABase
 		touch(login_button)
 	end
 
-	def loginView
-		check_view(textEmail)
-		check_view(textPassword)
-		check_view(trait)
-		check_view(textForgetPassword)
-		check_view(textRegistered)
-		check_view(textCallUS)
-		check_view(textOR)
-		check_view(textSUMMIT)
-		check_view(textThankYou)
-		check_view(textConsumer)
+	def loginByEmail(email)
+		clear_text(email_field)
+		touch(yourEmail)
+		enter_text(email_field, email)
+	end
+
+	def loginView(app)
+		if app == 'Biker'
+			check_view(textEmail)
+			check_view(textPassword)
+			check_view(trait)
+			check_view(textForgetPassword)
+			check_view(textRegistered)
+			check_view(textCallUS)
+			check_view(textOR)
+			check_view(textSUMMIT)
+			check_view(textThankYou)
+			check_view(textConsumer)
+		else
+			check_view(yourEmail)
+			check_view(yourPassword)
+			check_view(trait)
+			check_view(textForgetPassword)
+		end
+	end
+
+	def tapLogin
+		touch(trait)
 	end
 
 	def touchLogin
-		touch(login_button)
+		touch(button_field)
 	end
 
 	def touchView
@@ -124,20 +153,21 @@ class LoginScreen < Calabash::ABase
 		check_view(textEmailBlank)
 	end
 
-	def showMessageEmailFormat
-		check_view(textEmailFormat)
+	def showMessageEmailFormat(app)
+		if app == 'Biker'
+			check_view(textEmailFormat)
+		else
+			check_view(textEmailIncorrect)
+		end
+		
 	end
 
-	def showMessagePasswordBlank
-		check_view(textPasswordBlank)
-	end
-
-	def showMessageAccountNotExit
-		check_view(textAccountNotExit)
-	end
-
-	def showMessageIncorrectPassword
-		check_view(textIncorrectPassword)
+	def showMessagePasswordBlank(app)
+		if app == 'Biker'
+			check_view(textPasswordBlank)
+		else
+			check_view(keyPasswordBlank)
+		end
 	end
 
 	def passwordBlank(email)
@@ -146,6 +176,25 @@ class LoginScreen < Calabash::ABase
 		clear_text(password_field)
 		touch(touchPassword)
 		touch(login_button)
+	end
+
+	def touchPassword
+		touch(yourPassword)
+	end
+
+	def processToHome(email,password,app)
+		if app == 'Biker'
+		else
+			tapLogin
+			clear_text(email_field)
+			touch(yourEmail)
+			enter_text(email_field, email)
+			clear_text(password_field)
+			touch(yourPassword)
+			enter_text(password_field, password)
+			scrollDown
+			touchLogin
+		end
 	end
 
 end

@@ -29,6 +29,7 @@ module GoBike
 
     def checkValue(uiquery,test)
       a = query(uiquery,:text)
+      puts a
       if test != a[0]
         raise test << ' not equal ' << a[0]
       end
