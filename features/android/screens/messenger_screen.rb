@@ -106,6 +106,7 @@ class MessengerScreen < Calabash::ABase
 		enter_text(senderName_field,name)
 		clear_text(senderPhone_field)
 		enter_text(senderPhone_field,phone)
+		touch(recipientName_field)
 		touch(senderName_field)
   end
 

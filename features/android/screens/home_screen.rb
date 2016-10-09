@@ -201,8 +201,8 @@ class HomeScreen < Calabash::ABase
 		check_view(report)
 		check_view(setting)
 		check_view(logout)
-		tapButton('Logout')
-		waitProgress
+#		tapButton('Logout')
+#		waitProgress
 	end
 
 	def checkNameBiker(name)
@@ -291,6 +291,7 @@ class HomeScreen < Calabash::ABase
 		else
 			touchScreen(10,10)
 			tapButton('Settings')
+			sleep(3.to_i)
 			tapButton('Logout')
 			waitProgress
 		end

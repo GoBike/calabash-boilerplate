@@ -6,6 +6,10 @@ Given(/^I am on the Login screen$/) do
   login_screen = page(LoginScreen).await
 end
 
+Given(/^I am on the Home screen in Customer app$/) do
+  homecustomer = page(HomeCustomerScreen).await
+end
+
 Given(/^I am on the Home screen by Login in as email "(.*?)" with password "(.*?)" in "(.*?)" app$/) do |email, password,app|
   page(LoginScreen).processToHome(email,password,app)
 end
@@ -36,6 +40,10 @@ end
 
 When(/^I touch NEXT button$/) do
   page(SignupScreen).touchNext
+end
+
+When(/^I touch NEXT button in Messenger screen$/) do
+  page(MessengerScreen).touchNext
 end
 
 When(/^I touch LOGIN Tab$/) do
@@ -118,8 +126,16 @@ Then(/^I want to logout in "([^\"]*)" app$/) do |app|
   page(HomeScreen).processToLogout(app)
 end
 
+Then(/^I want to logout in Customer app$/) do
+  page(HomeCustomerScreen).processToLogout
+end
+
 Then(/^I want to my Account in "([^\"]*)" app$/) do |app|
   page(HomeScreen).processToAccount(app)
+end
+
+Then(/^I want to my Account in Customer app$/) do
+  page(HomeCustomerScreen).processToAccount
 end
 
 Then(/^I search location in as "(.*?)" with selected "(.*?)"$/) do |inSearch,chooseLocation|
@@ -246,12 +262,24 @@ Then(/^I touch Password$/) do
   page(LoginScreen).touchTextPassword
 end
 
+Then(/^I touch Go Ride button$/) do
+  page(HomeCustomerScreen).touchGoRide
+end
+
+Then(/^I touch Go Messenger button$/) do
+  page(HomeCustomerScreen).touchGoMessenger
+end
+
 Then(/^I touch CHECK FARE button$/) do
   page(PassengerScreen).touchCheckFare
 end
 
 Then(/^I touch BOOK BIKER Button$/) do
   page(BookingScreen).touchBooking
+end
+
+Then(/^I press back button$/) do
+  page(PassengerScreen).touchBack
 end
 
 Then(/^I should be see biker name in as "([^\"]*)"$/) do |name|

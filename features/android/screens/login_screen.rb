@@ -27,6 +27,10 @@ class LoginScreen < Calabash::ABase
 		"* marked:'LOGIN'"
 	end
 
+	def tapTextLogin
+		"* marked:'LOGIN'"
+	end
+
 	def textEmail
 		"* marked:'Email'"
 	end

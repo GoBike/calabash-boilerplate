@@ -24,7 +24,7 @@ class BookingScreen < Calabash::ABase
 	end
 
 	def promoCode
-		"* marked:'Promo code'"
+		"* marked:'Promo Code'"
 	end
 
 	def term
@@ -44,7 +44,7 @@ class BookingScreen < Calabash::ABase
 	end
 
 	def messagePromo
-		"* marked:'Invalid or expired promotion code'"
+		"* marked:'Invalid or expired promotion code.'"
 	end
 
 	def textOK

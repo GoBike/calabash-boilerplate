@@ -47,6 +47,10 @@ class PassengerScreen < Calabash::ABase
 		"* id:'btn_check_fare'"
 	end
 
+	def checkFareText
+		"* marked:'CHECK FARE'"
+	end
+
 	def textSearch
 		"* marked:'Search'"
 	end
@@ -61,6 +65,10 @@ class PassengerScreen < Calabash::ABase
 
   def messageDistanceFar
     "* marked:'Distance is too far for biker.'"
+  end
+
+  def touchGoRide
+  	touch(goRide_button)
   end
 
 	def processToPassenger(email,password)
@@ -93,6 +101,10 @@ class PassengerScreen < Calabash::ABase
 
 	def touchPickUp
 		touch(pickUp)
+	end
+
+	def touchBack
+		touchScreen(10,10)
 	end
 
   def messageChooseLocation

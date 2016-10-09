@@ -73,5 +73,6 @@ So that I can login to home screen
     Then I login in as email "customera76@gmail.com" with password "taipower"
     Then I scroll down
     Then I touch LOGIN button
-    Then I wait for progress
+	Then I wait up to 30 seconds to see "Go Ride"
+    Then I wait for 5 seconds    
     Then I want to logout in "Customer" app
