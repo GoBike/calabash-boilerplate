@@ -84,4 +84,8 @@ class HomeCustomerScreen < Calabash::ABase
 	def touchGoMessenger
 		touch(goMessenger)
 	end
+
+	def touchGoBuy
+		touch(goBuy)
+	end
 end

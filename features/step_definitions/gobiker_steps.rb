@@ -110,12 +110,24 @@ When(/^I touch Recipient name$/) do
   page(MessengerScreen).touchRecipientName
 end
 
+When(/^I touch Go Buy button$/) do
+  page(HomeCustomerScreen).touchGoBuy
+end
+
+When(/^I touch CONFIRM button in Go Buy screen$/) do
+  page(GoBuyScreen).touchConfirm
+end
+
 When(/^Biker let Rating "([^\"]*)"$/) do |rating|
   page(RatingScreen).setRatingFromBiker(rating)
 end
 
 Then(/^I should be on the Sign Up screen$/) do
   page(SignupScreen).checkSignupView
+end
+
+Then(/^I should be on the Go Buy screen$/) do
+  gobuy = page(GoBuyScreen).await
 end
 
 Then(/^I should be on the Login screen of "([^\"]*)" app$/) do |app|
@@ -202,6 +214,10 @@ Then(/^I should be see message distance too far alert$/) do
   page(PassengerScreen).checkMessageDistanceFar
 end
 
+Then(/^I should be see Distance is too far in Go Buy screen$/) do
+  page(GoBuyScreen).checkMessageTooFar
+end
+
 Then(/^I should be see message promo code alert$/) do
   page(BookingScreen).checkMessagePromo
 end
@@ -222,12 +238,20 @@ Then(/^I should be see the same point dialog alert in Messenger screen$/) do
   page(MessengerScreen).checkTheSamePlaceMessage
 end
 
+Then(/^I should be see description item to buy message alert$/) do
+  page(GoBuyScreen).checkMessageDescription
+end
+
 Then(/^I login in as email "(.*?)" with password "(.*?)"$/) do |email, password|
   page(LoginScreen).login(email, password)
 end
 
 Then(/^I login in as "(.*?)"$/) do |email|
   page(LoginScreen).loginByEmail(email)
+end
+
+Then(/^I enter description order by "(.*?)"$/) do |descriptionOrder|
+  page(GoBuyScreen).enterOrder(descriptionOrder)
 end
 
 Then(/^I should be on the Home screen$/) do
@@ -276,6 +300,14 @@ end
 
 Then(/^I touch BOOK BIKER Button$/) do
   page(BookingScreen).touchBooking
+end
+
+Then(/^I touch Nearby$/) do
+  page(GoBuyScreen).touchNearby
+end
+
+Then(/^I touch My Location$/) do
+  page(GoBuyScreen).touchMyLocation
 end
 
 Then(/^I press back button$/) do

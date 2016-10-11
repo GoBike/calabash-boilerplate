@@ -18,18 +18,9 @@ So that I unsuccessful booking
     Then I touch CHECK FARE button
     Then I should be see message choose location alert
 	Then I go back
-#    Given I am on the Home screen in Customer app
-#    Then I wait for 5 seconds
-#    Then I want to logout in Customer app
-#    Then I wait for 5 seconds
 
   Scenario: As a enter the same start and end point, I see message the same location alert
     When I press "OK"
-#    Given I am on the Login screen
-#    When I touch LOGIN Tab
-#    Then I login in as email "customera76@gmail.com" with password "taipower"
-#    Then I scroll down
-#    Then I touch LOGIN button
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
     Then I touch Go Ride button
@@ -41,18 +32,9 @@ So that I unsuccessful booking
     Then I should be see the same point dialog alert
     Then I touch OK button
     Then I go back
-#    Given I am on the Home screen in Customer app
-#    Then I wait for 5 seconds
-#    Then I want to logout in Customer app
-#    Then I wait for 5 seconds
 
   Scenario: As a enter Tip more than 100 Bath, I see message Tip alert.
     When I press "OK"
-#    Given I am on the Login screen
-#    When I touch LOGIN Tab
-#    Then I login in as email "customera76@gmail.com" with password "taipower"
-#    Then I scroll down
-#    Then I touch LOGIN button
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
     Then I touch Go Ride button
@@ -70,18 +52,9 @@ So that I unsuccessful booking
     Then I go back
     Then I go back
     Then I go back
-#    Given I am on the Home screen in Customer app
-#    Then I wait for 5 seconds
-#    Then I want to logout in "Customer" app
-#    Then I wait for 5 seconds
 
   Scenario: As a enter drop off more than 50 km., I see message long distance alert
     When I press "OK"
-#    Given I am on the Login screen
-#    When I touch LOGIN Tab
-#    Then I login in as email "customera76@gmail.com" with password "taipower"
-#    Then I scroll down
-#    Then I touch LOGIN button
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
     Then I touch Go Ride button
@@ -93,18 +66,9 @@ So that I unsuccessful booking
     Then I should be see message distance too far alert
     Then I touch OK button
     Then I go back
-#    Given I am on the Home screen in Customer app
-#    Then I wait for 5 seconds
-#    Then I want to logout in Customer app
-#    Then I wait for 5 seconds
 
   Scenario: As a enter invalid promo code, I see message invalid promo code alert
     When I press "OK"
-#    Given I am on the Login screen
-#    When I touch LOGIN Tab
-#    Then I login in as email "customera76@gmail.com" with password "taipower"
-#    Then I scroll down
-#    Then I touch LOGIN button
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
     Then I touch Go Ride button
@@ -121,7 +85,3 @@ So that I unsuccessful booking
     Then I go back
     Then I go back
     Then I go back
-#    Given I am on the Home screen in Customer app
-#    Then I wait for 5 seconds
-#    Then I want to logout in Customer app
-#    Then I wait for 5 seconds
