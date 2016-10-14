@@ -30,8 +30,8 @@ When(/^I sign up in as "(.*?)"$/) do |email|
   page(SignupScreen).signupByEmail(email)
 end
 
-When(/^I login in as "(.*?)" with password "(.*?)" in Login screen$/) do |email, password|
-  page(LoginScreen).login(email, password)
+When(/^I login in as "(.*?)" with password "(.*?)" in Login screen "(.*?)" app$/) do |email, password,app|
+  page(LoginScreen).login(email, password,app)
 end
 
 When(/^I enter booking by note in as "(.*?)" ,Tip in as (\d+) Baht and promo code in as "(.*?)"$/) do |note,tip,promo|
@@ -242,8 +242,8 @@ Then(/^I should be see description item to buy message alert$/) do
   page(GoBuyScreen).checkMessageDescription
 end
 
-Then(/^I login in as email "(.*?)" with password "(.*?)"$/) do |email, password|
-  page(LoginScreen).login(email, password)
+Then(/^I login in as email "(.*?)" with password "(.*?)" in "(.*?)" app$/) do |email, password,app|
+  page(LoginScreen).login(email, password,app)
 end
 
 Then(/^I login in as "(.*?)"$/) do |email|
@@ -308,6 +308,10 @@ end
 
 Then(/^I touch My Location$/) do
   page(GoBuyScreen).touchMyLocation
+end
+
+Then(/^I touch email phone edittext$/) do
+  page(LoginScreen).touchEmailPhone
 end
 
 Then(/^I press back button$/) do
@@ -409,4 +413,8 @@ end
 
 Then(/^I touch Recipient phone number$/) do
   page(MessengerScreen).touchRecipientPhone
+end
+
+Then(/^I action on process walkthroug$/) do
+  page(GoBuyScreen).walkthroughStep
 end

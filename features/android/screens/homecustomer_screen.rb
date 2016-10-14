@@ -65,7 +65,8 @@ class HomeCustomerScreen < Calabash::ABase
 		touchScreen(10,10)
 		tapButton('Settings')
 		tapButton('Logout')
-		waitProgress
+#		tapButton('YES')
+#		waitProgress
 	end
 
 	def processToAccount

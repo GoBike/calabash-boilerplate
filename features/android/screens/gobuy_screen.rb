@@ -39,9 +39,35 @@ class GoBuyScreen < Calabash::ABase
       "* marked:'Distance is too far for biker.'"
     end
 
+    def walkStep1
+      "* marked:'Start by adding items that you want to buy.'"
+    end
+
+    def walkStep2
+      "* marked:'Tell us where to buy and send your items.'"
+    end
+
+    def walkStep3
+      "* marked:'Check the fare and book a biker next.'"
+    end
+
+    def gotIt
+      "* marked:'GOT IT'"
+    end
+
     def enterOrder(orderDescription)
       clear_text(description_field)
       enter_text(description_field, orderDescription)
+    end
+
+    def walkthroughStep
+#      check_view(walkStep1)
+      touch(gotIt)
+#      check_view(walkStep2)
+      touch(gotIt)
+#      check_view(walkStep3)
+      sleep 5
+      touch(gotIt)
     end
 
   	def touchConfirm

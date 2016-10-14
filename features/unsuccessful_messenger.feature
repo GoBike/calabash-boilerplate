@@ -9,14 +9,13 @@ So that I unsuccessful in used messenger service
 #    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
     Given I am on the Login screen
     When I touch LOGIN Tab
-    Then I login in as email "customera76@gmail.com" with password "taipower"
+    Then I login in as email "customera76@gmail.com" with password "taipower" in "Customer" app
     Then I scroll down
     Then I touch LOGIN button
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
     Then I touch Go Messenger button
     Then I wait up to 30 seconds to see "ONE WAY/ROUND TRIP"
-#    Then I wait for progress
     When I touch select Pick up address
     Then I search location in as "Thailand Cultural MRT" with selected "Thailand Cultural MRT Station"
     Then I enter sender info in as name "Wichian" and mobile phone "0813504077"
@@ -38,15 +37,10 @@ So that I unsuccessful in used messenger service
     Then I wait up to 30 seconds to see "Invalid request."
     Then I wait for 3 seconds
     Then I go back
-#    Given I am on the Home screen in Customer app
-#    Then I wait for 5 seconds
-#    Then I want to logout in Customer app
-#    Then I wait for 5 seconds
 
   Scenario: As a not enter Sender info, I see mandatory alert
     When I press "OK"
 #    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
-#    Then I wait for progress
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
     Then I touch Go Messenger button
@@ -63,15 +57,10 @@ So that I unsuccessful in used messenger service
     Then I touch Sender phone number
     Then I should be see message This field is mandatory alert
     Then I go back
-#    Given I am on the Home screen in Customer app
-#    Then I wait for 5 seconds
-#    Then I want to logout in Customer app
-#    Then I wait for 5 seconds
 
   Scenario: As a enter incorrect phone format, I see incorrect phone format alert
     When I press "OK"
 #    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
-#    Then I wait for progress
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
     Then I touch Go Messenger button
@@ -103,15 +92,10 @@ So that I unsuccessful in used messenger service
     Then I touch Recipient phone number
     Then I should be see message Incorrect phone format alert
     Then I go back
-#    Given I am on the Home screen in Customer app
-#    Then I wait for 5 seconds
-#    Then I want to logout in Customer app
-#    Then I wait for 5 seconds
 
   Scenario: As a enter Pick Up and Drop Off are the same, I see the same place alert
     When I press "OK"
 #    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
-#    Then I wait for progress
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
     Then I touch Go Messenger button
@@ -124,15 +108,10 @@ So that I unsuccessful in used messenger service
     Then I should be see the same point dialog alert in Messenger screen
     Then I touch OK button
     Then I go back
-#    Given I am on the Home screen in Customer app
-#    Then I wait for 5 seconds
-#    Then I want to logout in Customer app
-#    Then I wait for 5 seconds
 
   Scenario: As a enter too far distance, I see distance the too far alert
     When I press "OK"
 #    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
-#    Then I wait for progress
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
     Then I touch Go Messenger button
@@ -149,7 +128,3 @@ So that I unsuccessful in used messenger service
     Then I should be see message distance too far alert
     Then I touch OK button
     Then I go back
-#    Given I am on the Home screen in Customer app
-#    Then I wait for 5 seconds
-#    Then I want to logout in Customer app
-#    Then I wait for 5 seconds

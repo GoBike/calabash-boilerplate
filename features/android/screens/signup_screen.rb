@@ -12,7 +12,7 @@ class SignupScreen < Calabash::ABase
   end
 
 	def yourEmail
-		"* marked:'Enter Your Email'"
+		"* marked:'Email / Phone Number'"
 	end
 
   def nextText
@@ -28,7 +28,7 @@ class SignupScreen < Calabash::ABase
   end
 
 	def email_field
-		"* id:'et_email'"
+		"* id:'et_email_phone'"
 	end
 
 	def next_button
@@ -36,11 +36,11 @@ class SignupScreen < Calabash::ABase
 	end
 
 	def textEmailFormat
-		"* marked:'Incorrect email format.'"
+		"* marked:'Invalid Email or Phone Number Format!'"
 	end
 
 	def messageEmailBlank
-		"* marked:'Please key in your email.'"
+		"* marked:'Please enter email/phone number'"
 	end
 
   def checkSignupView
@@ -68,7 +68,6 @@ class SignupScreen < Calabash::ABase
 	end
 
 	def touchNext
-#		touch(yourEmail)
 		touch(next_button)
 	end
 

@@ -287,11 +287,13 @@ class HomeScreen < Calabash::ABase
 		if app == 'Biker'
 			touchScreen(10,10)
 			tapButton('Logout')
+			sleep 3
+			tapButton('YES')
 			waitProgress
 		else
 			touchScreen(10,10)
 			tapButton('Settings')
-			sleep(3.to_i)
+			sleep 3
 			tapButton('Logout')
 			waitProgress
 		end

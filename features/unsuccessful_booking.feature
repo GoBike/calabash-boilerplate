@@ -8,7 +8,7 @@ So that I unsuccessful booking
     When I press "OK"
     Given I am on the Login screen
     When I touch LOGIN Tab
-    Then I login in as email "customera76@gmail.com" with password "taipower"
+    Then I login in as email "customera76@gmail.com" with password "taipower" in "Customer" app
     Then I scroll down
     Then I touch LOGIN button
     Then I wait up to 30 seconds to see "Go Ride"

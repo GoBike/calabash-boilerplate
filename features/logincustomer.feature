@@ -50,17 +50,19 @@ So that I can login to home screen
     When I press "OK"
     Given I am on the Login screen
     When I touch LOGIN Tab
-    Then I login in as email "testlogin@gmail.com" with password "123456"
+    Then I login in as email "testlogin@gmail.com" with password "123456" in "Customer" app
     Then I scroll down
     Then I touch LOGIN button
     Then I wait for progress
-    Then I wait up to 30 seconds to see "Account does not exist."
+#    Then I wait up to 30 seconds to see "Account does not exist."
+    Then I touch email phone edittext
+    Then I should see message account done not exist alert
 
   Scenario: As a enter invalid password, I see message incorrect password.
     When I press "OK"
     Given I am on the Login screen
     When I touch LOGIN Tab
-    Then I login in as email "customera76@gmail.com" with password "123456"
+    Then I login in as email "customera76@gmail.com" with password "123456" in "Customer" app
     Then I scroll down
     Then I touch LOGIN button
     Then I wait for progress
@@ -70,9 +72,13 @@ So that I can login to home screen
     When I press "OK"
     Given I am on the Login screen
     When I touch LOGIN Tab
-    Then I login in as email "customera76@gmail.com" with password "taipower"
+    Then I login in as email "customera76@gmail.com" with password "taipower" in "Customer" app
     Then I scroll down
     Then I touch LOGIN button
 	Then I wait up to 30 seconds to see "Go Ride"
     Then I wait for 5 seconds    
     Then I want to logout in "Customer" app
+    Then I wait for 3 seconds
+    Then I press "YES"
+    Then I wait for progress
+    Then I wait for 3 seconds

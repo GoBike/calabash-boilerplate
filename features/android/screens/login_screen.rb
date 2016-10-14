@@ -19,6 +19,10 @@ class LoginScreen < Calabash::ABase
 		"* id:'et_password'"
 	end
 
+	def email_phone_field
+		"* id:'et_email_phone'"
+	end
+
 	def button_field
 		"* id:'btn_login'"
 	end
@@ -96,25 +100,37 @@ class LoginScreen < Calabash::ABase
 	end
 
 	def yourEmail
-		"* marked:'Enter Your Email'"
+		"* marked:'Email / Phone Number'"
 	end
 
 	def yourPassword
 		"* marked:'Enter Your Password'"
 	end
 
-	def login(email, password)
-		clear_text(email_field)
-		enter_text(email_field, email)
-		clear_text(password_field)
-		enter_text(password_field, password)
-		touch(login_button)
+	def accountNotExist
+		"* marked:'Account does not exist.'"
+	end
+
+	def login(email, password,app)
+		if app == 'Biker'
+			clear_text(email_field)
+			enter_text(email_field, email)
+			clear_text(password_field)
+			enter_text(password_field, password)
+			touch(login_button)
+		else
+			clear_text(email_phone_field)
+			enter_text(email_phone_field, email)
+			clear_text(password_field)
+			enter_text(password_field, password)
+			touch(login_button)
+		end
 	end
 
 	def loginByEmail(email)
-		clear_text(email_field)
+		clear_text(email_phone_field)
 		touch(yourEmail)
-		enter_text(email_field, email)
+		enter_text(email_phone_field, email)
 	end
 
 	def loginView(app)
@@ -174,6 +190,10 @@ class LoginScreen < Calabash::ABase
 		end
 	end
 
+	def showMessageAccountNotExit
+		check_view(accountNotExist)
+	end
+
 	def passwordBlank(email)
 		clear_text(email_field)
 		enter_text(email_field, email)
@@ -184,6 +204,10 @@ class LoginScreen < Calabash::ABase
 
 	def touchPassword
 		touch(yourPassword)
+	end
+
+	def touchEmailPhone
+		touch(yourEmail)
 	end
 
 	def processToHome(email,password,app)
