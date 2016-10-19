@@ -5,7 +5,7 @@ I want to used Go Messenger Service
 So that I unsuccessful in used messenger service
 
   Scenario: As a not enter drop off data of One Way and Round Trip, I see invalid request alert
-    When I press "OK"
+    When I press "ALLOW"
 #    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
     Given I am on the Login screen
     When I touch LOGIN Tab
@@ -39,7 +39,7 @@ So that I unsuccessful in used messenger service
     Then I go back
 
   Scenario: As a not enter Sender info, I see mandatory alert
-    When I press "OK"
+#    When I press "OK"
 #    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
@@ -59,7 +59,7 @@ So that I unsuccessful in used messenger service
     Then I go back
 
   Scenario: As a enter incorrect phone format, I see incorrect phone format alert
-    When I press "OK"
+#    When I press "OK"
 #    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
@@ -94,7 +94,7 @@ So that I unsuccessful in used messenger service
     Then I go back
 
   Scenario: As a enter Pick Up and Drop Off are the same, I see the same place alert
-    When I press "OK"
+#    When I press "OK"
 #    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
@@ -110,7 +110,7 @@ So that I unsuccessful in used messenger service
     Then I go back
 
   Scenario: As a enter too far distance, I see distance the too far alert
-    When I press "OK"
+#    When I press "OK"
 #    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app

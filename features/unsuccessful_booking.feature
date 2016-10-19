@@ -5,7 +5,7 @@ I want to see message Booking alert
 So that I unsuccessful booking
 
   Scenario: As a enter empty location, I see message alert
-    When I press "OK"
+    When I press "ALLOW"
     Given I am on the Login screen
     When I touch LOGIN Tab
     Then I login in as email "customera76@gmail.com" with password "taipower" in "Customer" app
@@ -20,7 +20,7 @@ So that I unsuccessful booking
 	Then I go back
 
   Scenario: As a enter the same start and end point, I see message the same location alert
-    When I press "OK"
+#    When I press "OK"
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
     Then I touch Go Ride button
@@ -34,7 +34,7 @@ So that I unsuccessful booking
     Then I go back
 
   Scenario: As a enter Tip more than 100 Bath, I see message Tip alert.
-    When I press "OK"
+#    When I press "OK"
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
     Then I touch Go Ride button
@@ -54,7 +54,7 @@ So that I unsuccessful booking
     Then I go back
 
   Scenario: As a enter drop off more than 50 km., I see message long distance alert
-    When I press "OK"
+#    When I press "OK"
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
     Then I touch Go Ride button
@@ -68,7 +68,7 @@ So that I unsuccessful booking
     Then I go back
 
   Scenario: As a enter invalid promo code, I see message invalid promo code alert
-    When I press "OK"
+ #   When I press "OK"
     Then I wait up to 30 seconds to see "Go Ride"
     Given I am on the Home screen in Customer app
     Then I touch Go Ride button

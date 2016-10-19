@@ -51,4 +51,4 @@ So that I am on home
     Given I am on the Login screen
     When I login in as "tai@gobike.asia" with password "taipower" in Login screen "Biker" app
     Then I should be on the Home screen
-    Then I want to logout in "Biker" app
+#    Then I want to logout in "Biker" app
