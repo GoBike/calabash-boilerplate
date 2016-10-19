@@ -38,6 +38,10 @@ When(/^I enter booking by note in as "(.*?)" ,Tip in as (\d+) Baht and promo cod
   page(BookingScreen).enterBooking(note,tip,promo)
 end
 
+When(/^I touch Email$/) do
+  page(SignupScreen).touchEmailPhone
+end
+
 When(/^I touch NEXT button$/) do
   page(SignupScreen).touchNext
 end

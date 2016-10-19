@@ -5,7 +5,7 @@ I want to see message Go Buy alert
 So that I unsuccessful Go Buy
 
   Scenario: As a enter empty Go Buy, I see description message alert
-  	When I press "ALLOW"
+#  	When I press "ALLOW"
     Given I am on the Login screen
     When I touch LOGIN Tab
     Then I login in as email "customera76@gmail.com" with password "taipower" in "Customer" app

@@ -5,7 +5,7 @@ I want to see message Booking alert
 So that I unsuccessful booking
 
   Scenario: As a enter empty location, I see message alert
-    When I press "ALLOW"
+#    When I press "ALLOW"
     Given I am on the Login screen
     When I touch LOGIN Tab
     Then I login in as email "customera76@gmail.com" with password "taipower" in "Customer" app

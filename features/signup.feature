@@ -5,7 +5,7 @@ I want to Sign Up
 So that I can create my account
 
   Scenario: As a on sign up screen, I see valid sign up view
-    When I press "ALLOW"
+#    When I press "ALLOW"
     Given I am on the Sign up screen
     Then I should be on the Sign Up screen
 
@@ -13,6 +13,7 @@ So that I can create my account
 #    When I press "OK"
     Given I am on the Sign up screen
     When I touch NEXT button
+    When I touch Email
     Then I should see message email blank alert in Sign Up screen
 
   Scenario: As a enter invalid email format 1, I see email format alert

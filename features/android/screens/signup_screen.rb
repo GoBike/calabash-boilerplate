@@ -71,4 +71,8 @@ class SignupScreen < Calabash::ABase
 		touch(next_button)
 	end
 
+	def touchEmailPhone
+		touch(yourEmail)
+	end
+
 end

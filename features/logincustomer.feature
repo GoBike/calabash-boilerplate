@@ -5,7 +5,7 @@ I want to Login
 So that I can login to home screen
 
   Scenario: As a on login screen, I see valid login view.
-    When I press "ALLOW"
+#    When I press "ALLOW"
     Given I am on the Login screen
     When I touch LOGIN Tab
     Then I should be on the Login screen of "Customer" app

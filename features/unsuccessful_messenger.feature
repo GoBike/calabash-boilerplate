@@ -5,7 +5,7 @@ I want to used Go Messenger Service
 So that I unsuccessful in used messenger service
 
   Scenario: As a not enter drop off data of One Way and Round Trip, I see invalid request alert
-    When I press "ALLOW"
+#    When I press "ALLOW"
 #    Given I am on the Messenger screen by Login in as email "customera76@gmail.com" with password "taipower"
     Given I am on the Login screen
     When I touch LOGIN Tab
