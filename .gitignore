@@ -33,6 +33,7 @@ reports/
 screenshots/
 screenshot*.png
 test-servers/
+.calabash_settings
 
 # directory for staging for XTC runs
 xtc-staging/
